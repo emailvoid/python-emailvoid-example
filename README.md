@@ -1,8 +1,8 @@
-# EmailCoid Example
+# EmailVoid - Version 3.0 - Example
 
 ## Quick start
 
-Before you start you should install emailvoid Python module.
+Before you start you should install emailvoid Python module version 3.0.
 
 	# python2 -m pip install emailvoid
 

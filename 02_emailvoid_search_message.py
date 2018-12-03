@@ -7,12 +7,12 @@ from unittest import TestCase, main
 from emailvoid import EmailVoidClient
 
 
-class Test39188(TestCase):
+class Test39189(TestCase):
     def setUp(self):
         """ Precondition
         """
-        self.__log = getLogger('Test39188')
-        self._apikey = "b8818f4c8594021a9ca1489d135a2540d726f855767496788c6f1d76f2f5917d"
+        self.__log = getLogger('Test39189')
+        self._apikey = "4f016ffc-437e-4750-8b2d-d0dbc89de7fc"
         self._client = EmailVoidClient(apikey=self._apikey)
 
 
@@ -20,16 +20,12 @@ class Test39188(TestCase):
         """ Search message on server
         """
         # Step 0. Define const
-        username = 'support'
-        # Step 1. Check message count
-        msg_count = self._client.msg_count(username)
-        #self.__log.debug(msg_count)
-        # Step 2. Search our message
-        #if msg_count > 0:
-        #    items = c.msg_search(user)
-        #    for item in items:
-        #        self.__log.debug(item)
-        #        msgid = item.get_msgid()
+        domain = 'emailvoid.com'
+        # Step 2. Search messages
+        items = self._client.msg_search(domain=domain)
+        for item in items:
+            self.__log.debug("item = {item!r}".format(item=item))
+            #msgid = item.get_msgid()
 
 
     def tearDown(self):

@@ -12,7 +12,7 @@ class Test39188(TestCase):
         """ Precondition
         """
         self.__log = getLogger('Test39188')
-        self._apikey = "b8818f4c8594021a9ca1489d135a2540d726f855767496788c6f1d76f2f5917d"
+        self._apikey = "4f016ffc-437e-4750-8b2d-d0dbc89de7fc"
         self._client = EmailVoidClient(apikey=self._apikey)
 
 
@@ -20,9 +20,9 @@ class Test39188(TestCase):
         """ Receive message count on emailvoid.com server
         """
         # Step 0. Define const
-        username = 'support'
+        domain = 'emailvoid.com'
         # Step 1. Check message count
-        msg_count = self._client.msg_count(username)
+        msg_count = self._client.msg_count(domain=domain)
         self.__log.debug("msg_count = {msg_count!r}".format(msg_count=msg_count))
 
 
